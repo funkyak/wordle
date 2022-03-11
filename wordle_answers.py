@@ -3,18 +3,39 @@
 ## Scrape word from https://yesterdayswordle.com/
 
 
+
 with open("words1.txt","r") as words:
     contents = words.read()
-    print(contents)
+    
 
 def search():
         lines = []
-        with words:
-            lines = words.readline()
+        with open("words1.txt","r") as words:
+            lines = words.readlines()
 
-        count = 0 
-        for line in lines:
-            count += 1
-            print(f'line{count}: {line}')
+                   
+            Yesterdays_Wordle = input("Yesterdays Wordle:")
             
+            
+            if Yesterdays_Wordle in contents:
+                print('Word found!')
+            
+
+
+            
+            else:
+                print("Fail")
+
+            # loop didnot work 
+            
+
+            ## possible loop function needed to search through this. 
+            
+            #Todays_wordle = Yesterdays_Wordle + len(words + 1)
+            #print("Todays_wordle")
+            ##print(f'line{count}: {line}')
+            ## not jumping to the new lines always line 1
+            
+
+       
 search()
