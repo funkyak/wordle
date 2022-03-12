@@ -1,7 +1,3 @@
-from re import A
-from turtle import goto
-
-
 with open("words1.txt","r") as words:
     contents = words.read()
     
@@ -12,9 +8,8 @@ def search():
         with open("words1.txt","r") as words:
             lines = words.readlines()
             
-            
             #input yesterdays wordle
-            Yesterdays_Wordle = input("Yesterdays Wordle:")
+            Yesterdays_Wordle = input("Yesterdays Wordle: ")
             
             if Yesterdays_Wordle in contents:
                 index = contents
@@ -30,6 +25,6 @@ def search():
                 #Letter 5
                 next_word4 = index[index.index(Yesterdays_Wordle)+ 13]
                 #Output 
-                print(next_word + next_word1 + next_word2 + next_word3 + next_word4)
+                print("Todays wordle is : "+ next_word + next_word1 + next_word2 + next_word3 + next_word4)
                 
 search()
