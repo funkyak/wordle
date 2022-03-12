@@ -1,12 +1,5 @@
-##wordlists from https://www.nytimes.com/games/wordle/main.bfba912f.js
-
-## Scrape word from https://yesterdayswordle.com/
-
-
-
-from asyncio import create_subprocess_shell
-import gettext
-
+from re import A
+from turtle import goto
 
 
 with open("words1.txt","r") as words:
@@ -15,38 +8,28 @@ with open("words1.txt","r") as words:
 
 def search():
         lines = []
+        #file with word list 
         with open("words1.txt","r") as words:
             lines = words.readlines()
-
-                   
+            
+            
+            #input yesterdays wordle
             Yesterdays_Wordle = input("Yesterdays Wordle:")
             
-            
             if Yesterdays_Wordle in contents:
-                print('Word found!')
-
-               # today_wordle = Yesterdays_Wordle 
-                def getNext(words):                
-                    next_el = None
-                    for index, elem in enumerate(contents):
-                        for index, elem in enumerate(contents):
-                            if index + 1 <len(contents) and index - 1 >= 0:
-                                contents = elem - 1
-                                if words == contents:
-                                    next_el = contents[index]
-                                    print(next_el)
-                    return next_el
-                print(gettext)
-            getNext()
-
-            
-
-                    
-
-            ## possible loop function needed to search through this. 
-            
-            #Todays_wordle = Yesterdays_Wordle + len(words + 1)
-            
-
-       
+                index = contents
+                
+                #letter 1
+                next_word = index[index.index(Yesterdays_Wordle)+ 9]
+                #letter 2
+                next_word1 = index[index.index(Yesterdays_Wordle)+ 10]
+                #Letter 3
+                next_word2 = index[index.index(Yesterdays_Wordle)+ 11]
+                #Letter 4
+                next_word3 = index[index.index(Yesterdays_Wordle)+ 12]
+                #Letter 5
+                next_word4 = index[index.index(Yesterdays_Wordle)+ 13]
+                #Output 
+                print(next_word + next_word1 + next_word2 + next_word3 + next_word4)
+                
 search()
